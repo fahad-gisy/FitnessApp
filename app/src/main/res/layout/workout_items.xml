@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/DarkThem"
+    android:id="@+id/viewCard"
+    android:layout_marginBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintParent"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_customs"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/workoutPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/jacks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"
+        />
+    <TextView
+        android:id="@+id/workTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تدريب الفلاني"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/workoutPic"
+        app:layout_constraintTop_toTopOf="parent" />
+<TextView
+    android:id="@+id/supworkTv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="تدريب"
+    android:textSize="20dp"
+    android:textColor="@color/white"
+    app:layout_constraintTop_toBottomOf="@+id/workTv"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
