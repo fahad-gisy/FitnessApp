@@ -40,16 +40,13 @@ var listView:RecyclerView? = null
     }
 private fun recycler(){
     val array:ArrayList<Workout> = ArrayList()
-    array.add(Workout("قفزة جاك","تمرين ",R.drawable.jacksn))
-    array.add(Workout("الوقوف على الكرسي","تمرين ",R.drawable.chairs))
-    array.add(Workout("الضغط","تمرين ",R.drawable.pushup))
-    array.add(Workout("البطن","التمرين ",R.drawable.crunches))
-    array.add(Workout("المشي","نصف ساعة يوميا",R.drawable.manwalk))
-    array.add(Workout("قفزة جاك","التمرين الاول",R.drawable.jacks))
-    array.add(Workout("قفزة جاك","التمرين الاول",R.drawable.jacks))
-    array.add(Workout("قفزة جاك","التمرين الاول",R.drawable.jacks))
-    array.add(Workout("قفزة جاك","التمرين الاول",R.drawable.jacks))
-    array.add(Workout("قفزة جاك","التمرين الاول",R.drawable.jacks))
+    array.add(Workout("قفزة جاك","تمرن 10-20 مرة يوميا",R.drawable.jacksn))
+    array.add(Workout("   الوقوف على الكرسي","تمرن بشكل مكرر يوميا ",R.drawable.chairs))
+    array.add(Workout("الضغط","تمرن بقد استطاعتك \n     مع زيادة العدد تدريجيا",R.drawable.pushup))
+    array.add(Workout("تمرين البطن","10 عدات \n       3 مرات يوميا ",R.drawable.crunches))
+    array.add(Workout("المشي"," مشي 1,0000 خطوة يوميا",R.drawable.manwalk))
+    array.add(Workout("تمرين البلانك","يوميا بقد استطاعتك \n     مع زيادة المدة تدريجيا",R.drawable.plank))
+
 
     val customWorkout:CustomWorkout = CustomWorkout(array,this) // نادينا المتغير هنا
 
@@ -93,6 +90,12 @@ listView?.adapter = customWorkout
             4->{
                 fragmentTransaction.replace(R.id.container,WalkingFragment(),"WalkFrag")
                 fragmentTransaction.addToBackStack("WalkFrag")
+//                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                fragmentTransaction.commit()
+            }
+            5->{
+                fragmentTransaction.replace(R.id.container,PlankFragment(),"PlankFrag")
+                fragmentTransaction.addToBackStack("PlankFrag")
 //                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 fragmentTransaction.commit()
             }

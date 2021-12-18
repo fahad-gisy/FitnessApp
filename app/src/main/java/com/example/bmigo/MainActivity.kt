@@ -6,6 +6,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -18,10 +19,11 @@ class MainActivity : AppCompatActivity() {
     var imageView: ImageView? = null
     var bottomNavigationView: BottomNavigationView? = null
     var frameLayout: FrameLayout? = null
-    var fragmentSelected: Fragment? = null
+    var lottieAnimationWeight:LottieAnimationView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        lottieAnimationWeight?.playAnimation()
         connectVs()
         clickBtn()
         navBottomClick()
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun connectVs() {
+        lottieAnimationWeight = findViewById(R.id.weightLottie)
         button = findViewById(R.id.btnCal)
         editTextH = findViewById(R.id.ETheight)
         editTextW = findViewById(R.id.EDweight)
@@ -41,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickBtn() {
         button?.setOnClickListener {
+
             try {
                 val h: Float =
                     editTextH?.text.toString().toFloat() / 100 //نحول الطول من سانتي متر ل متر

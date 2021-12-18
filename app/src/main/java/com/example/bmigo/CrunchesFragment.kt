@@ -34,6 +34,7 @@ class CrunchesFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         lottieAnimationView?.playAnimation()
+
     }
     override fun onPause() {
         super.onPause()
