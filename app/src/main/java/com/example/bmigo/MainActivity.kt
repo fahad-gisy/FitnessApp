@@ -82,10 +82,17 @@ class MainActivity : AppCompatActivity() {
                         supportFragmentManager.popBackStack()
                     }
                 }
-                R.id.steps -> {
+                R.id.health -> {
+                    var fragmentTransaction: FragmentTransaction =
+                        supportFragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.container, HealthyFoodFragment(), "HealthFood")
+                    fragmentTransaction.addToBackStack("HealthFood")
+                    fragmentTransaction.commit()
 
-                    intent = Intent(this, StepsActivity::class.java)
-                    startActivity(intent)
+                    if (supportFragmentManager.backStackEntryCount > 0) {
+                        supportFragmentManager.popBackStack()
+                    }
+
                 }
 
             }

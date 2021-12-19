@@ -12,13 +12,14 @@
         android:id="@+id/weightLottie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/weight"
-        app:lottie_loop="true"
-        android:layout_marginTop="35dp"
-        app:lottie_autoPlay="true"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/weight" />
     <TextView
         android:id="@+id/bmiTV"
         android:layout_width="wrap_content"

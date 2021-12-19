@@ -10,9 +10,9 @@
     />
 
     <item
-        android:id="@+id/steps"
-        android:title="عداد الخطوات"
-        android:icon="@drawable/ic_baseline_directions_run_24"
+        android:id="@+id/health"
+        android:title="الطعام"
+        android:icon="@drawable/health"
         android:iconTint="@color/white"
         />
 
