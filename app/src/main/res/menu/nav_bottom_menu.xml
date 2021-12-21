@@ -6,14 +6,14 @@
     android:id="@+id/workout"
     android:title="التدريبات"
     android:icon="@drawable/workout"
-    android:iconTint="@color/black"
+    android:iconTint="@color/blue"
     />
 
     <item
         android:id="@+id/health"
         android:title="الطعام"
         android:icon="@drawable/health"
-        android:iconTint="@color/white"
+        android:iconTint="@color/blue"
         />
 
 

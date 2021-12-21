@@ -2,14 +2,17 @@ package com.example.bmigo
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.DocumentsContract
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
+var bottomNavigationView: BottomNavigationView? = null
 class MainActivity : AppCompatActivity() {
 
     var button: Button? = null
@@ -17,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     var editTextW: EditText? = null
     var result: TextView? = null
     var imageView: ImageView? = null
-    var bottomNavigationView: BottomNavigationView? = null
     var frameLayout: FrameLayout? = null
     var lottieAnimationWeight:LottieAnimationView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         connectVs()
         clickBtn()
         navBottomClick()
+
 
 
     }
@@ -63,24 +66,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun navBottomClick() {
         bottomNavigationView?.setOnItemSelectedListener {
-
-            var intent = Intent()
 
             when (it.itemId) {
 
                 R.id.workout -> {
-
                     var fragmentTransaction: FragmentTransaction =
                         supportFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.container, WorkoutFragment(), "WORKOUT")
                     fragmentTransaction.addToBackStack("WORKOUT")
                     fragmentTransaction.commit()
 
-                    if (supportFragmentManager.backStackEntryCount > 0) {
-                        supportFragmentManager.popBackStack()
-                    }
                 }
                 R.id.health -> {
                     var fragmentTransaction: FragmentTransaction =
@@ -89,10 +87,6 @@ class MainActivity : AppCompatActivity() {
                     fragmentTransaction.addToBackStack("HealthFood")
                     fragmentTransaction.commit()
 
-                    if (supportFragmentManager.backStackEntryCount > 0) {
-                        supportFragmentManager.popBackStack()
-                    }
-
                 }
 
             }
@@ -100,6 +94,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 }
 
 

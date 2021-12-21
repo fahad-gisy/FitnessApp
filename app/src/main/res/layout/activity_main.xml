@@ -8,11 +8,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/weightLottie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,65 +23,79 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/weight" />
-    <TextView
-        android:id="@+id/bmiTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="@string/bmiCal"
-        android:layout_marginBottom="100dp"
-        android:textColor="@color/blue"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="340dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/bmiTV"
-        android:layout_centerHorizontal="true"
+        android:layout_height="200dp"
         android:background="@drawable/shape_customs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+       >
+
+
+        <TextView
+            android:id="@+id/bmiTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmiCal"
+            android:textColor="@color/blue"
+            android:textSize="40dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/heightTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="15dp"
-            android:text="@string/height"
+            android:text="Cm"
             android:textColor="@color/blue"
-            android:textSize="30dp" />
+            android:textSize="20dp"
+            android:layout_marginTop="77dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ETheight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ETheight"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="35dp"
-            android:text="Cm"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:layout_marginBottom="25dp"
+            android:text="@string/height"
+            android:textColor="@color/blue"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ETheight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/ETheight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="25dp"
-            android:layout_toStartOf="@+id/heightTV"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="55dp"
+            android:textAlignment="center"
             android:background="@drawable/tv_shape"
             android:backgroundTint="#1e1d1d"
             android:inputType="number"
             android:maxLength="3"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/EDweight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bmiTV" />
 
         <TextView
             android:id="@+id/wightTV"
@@ -86,40 +103,52 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/heightTV"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="15dp"
-            android:text="الوزن"
+            android:layout_marginTop="24dp"
+            android:text="Kg"
             android:textColor="@color/blue"
-            android:textSize="30dp" />
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/EDweight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/EDweight"
+            app:layout_constraintTop_toBottomOf="@+id/heightTV" />
 
         <EditText
             android:id="@+id/EDweight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/wightTV"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="5dp"
-            android:layout_toStartOf="@id/heightTV"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="55dp"
+            android:textAlignment="center"
             android:background="@drawable/tv_shape"
             android:backgroundTint="#1e1d1d"
             android:inputType="number"
             android:maxLength="3"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/ETheight" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="105dp"
-            android:text="Kg"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="40dp"
+            android:text="الوزن"
+            android:textColor="@color/blue"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/EDweight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-    </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -145,27 +174,64 @@
 
     </LinearLayout>
 
-
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavView"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/nav_bottom_menu"
-        android:background="@color/DarkBlue"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomNavBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/DarkBlue"
+            android:backgroundTint="@color/DarkBlue"
+            app:fabCradleMargin="30dp"
+            app:fabCradleRoundedCornerRadius="10dp"
+            >
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:itemIconTint="@color/blue"
+                app:itemTextColor="@color/blue"
+                app:menu="@menu/nav_bottom_menu"/>
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/flotBMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:layout_marginBottom="1dp"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/bmi"
+            app:layout_anchor="@+id/bottomNavBar"
+            app:layout_anchorGravity="center" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
 
 
 

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.concurrent.fixedRateTimer
 
+var fragmentAdded:Fragment? = null
 //نقلنا داله اللسنر هنا
 class WorkoutFragment : Fragment(),CustomWorkout.MyOnClickListener {
 
@@ -31,13 +32,16 @@ var listView:RecyclerView? = null
         super.onViewCreated(view, savedInstanceState)
         connectVs(view)
         recycler()
-     if (requireFragmentManager().backStackEntryCount > 1){
-         requireFragmentManager().popBackStack()
-     }
+
+        if (requireFragmentManager().backStackEntryCount > 1){
+            requireFragmentManager().popBackStack()
+        }
     }
     private fun connectVs(view: View) {
- listView = view.findViewById(R.id.workoutLIST)
+        bottomNavigationView = view.findViewById(R.id.bottomNavView)
+        listView = view.findViewById(R.id.workoutLIST)
     }
+
 private fun recycler(){
     val array:ArrayList<Workout> = ArrayList()
     array.add(Workout("قفزة جاك","تمرن 10-20 مرة يوميا",R.drawable.jacksn))
