@@ -1,5 +1,6 @@
 package com.example.bmigo
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,20 +22,16 @@ class HealthyFoodFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       floatMain()
 
-        if (requireFragmentManager().backStackEntryCount > 1){
-            requireFragmentManager().popBackStack()
+    }
+    private fun floatMain(){
+        var intent: Intent
+        floatingButtonBmi?.setOnClickListener {
+            intent = Intent(requireContext(),MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
         }
-
-//        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                if (requireFragmentManager().backStackEntryCount == 1){
-//               requireFragmentManager().popBackStack()
-//        }
-//            }
-//        })
-
-
     }
 
 

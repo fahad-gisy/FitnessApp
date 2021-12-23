@@ -1,5 +1,6 @@
 package com.example.bmigo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,15 +32,23 @@ var listView:RecyclerView? = null
 
         super.onViewCreated(view, savedInstanceState)
         connectVs(view)
+        floatMain()
         recycler()
 
-        if (requireFragmentManager().backStackEntryCount > 1){
-            requireFragmentManager().popBackStack()
-        }
     }
     private fun connectVs(view: View) {
         bottomNavigationView = view.findViewById(R.id.bottomNavView)
         listView = view.findViewById(R.id.workoutLIST)
+    }
+
+    private fun floatMain(){
+        var intent:Intent
+        floatingButtonBmi?.setOnClickListener {
+            intent = Intent(requireContext(),MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+
+        }
     }
 
 private fun recycler(){

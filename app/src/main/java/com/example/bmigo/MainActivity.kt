@@ -1,5 +1,6 @@
 package com.example.bmigo
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.DocumentsContract
@@ -11,8 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
-var bottomNavigationView: BottomNavigationView? = null
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.io.FileInputStream
+var fragment:Fragment? = null
+var bottomNavigationView:BottomNavigationView? = null
+var floatingButtonBmi:FloatingActionButton? = null
 class MainActivity : AppCompatActivity() {
 
     var button: Button? = null
@@ -43,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imgVr)
         bottomNavigationView = findViewById(R.id.bottomNavView)
         frameLayout = findViewById(R.id.container)
+        floatingButtonBmi = findViewById(R.id.flotBMI)
     }
 
     private fun clickBtn() {
@@ -76,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     var fragmentTransaction: FragmentTransaction =
                         supportFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.container, WorkoutFragment(), "WORKOUT")
-                    fragmentTransaction.addToBackStack("WORKOUT")
+//                    fragmentTransaction.addToBackStack("WORKOUT")
                     fragmentTransaction.commit()
 
                 }
@@ -84,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                     var fragmentTransaction: FragmentTransaction =
                         supportFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.container, HealthyFoodFragment(), "HealthFood")
-                    fragmentTransaction.addToBackStack("HealthFood")
+//                    fragmentTransaction.addToBackStack("HealthFood")
                     fragmentTransaction.commit()
 
                 }
@@ -95,6 +100,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+//        super.onBackPressed()
+
+
+    }
 
 }
 

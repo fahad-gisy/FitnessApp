@@ -59,7 +59,7 @@
             android:layout_alignParentEnd="true"
             android:text="Cm"
             android:textColor="@color/blue"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_marginTop="77dp"
             app:layout_constraintBottom_toBottomOf="@+id/ETheight"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/height"
             android:textColor="@color/blue"
             android:textSize="30dp"
@@ -82,7 +82,7 @@
         <EditText
             android:id="@+id/ETheight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginStart="80dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="55dp"
@@ -106,7 +106,7 @@
             android:layout_marginTop="24dp"
             android:text="Kg"
             android:textColor="@color/blue"
-            android:textSize="20dp"
+            android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="@+id/EDweight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/EDweight"
@@ -115,7 +115,7 @@
         <EditText
             android:id="@+id/EDweight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignBottom="@id/wightTV"
             android:layout_marginStart="80dp"
             android:layout_marginTop="25dp"
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:text="الوزن"
             android:textColor="@color/blue"
             android:textSize="30dp"
@@ -196,7 +196,7 @@
             android:layout_gravity="bottom"
             android:background="@color/DarkBlue"
             android:backgroundTint="@color/DarkBlue"
-            app:fabCradleMargin="30dp"
+            app:fabCradleMargin="20dp"
             app:fabCradleRoundedCornerRadius="10dp"
             >
 
@@ -208,6 +208,7 @@
                 android:background="@android:color/transparent"
                 app:itemIconTint="@color/blue"
                 app:itemTextColor="@color/blue"
+                app:itemIconSize="25dp"
                 app:menu="@menu/nav_bottom_menu"/>
 
 
@@ -217,10 +218,10 @@
             android:id="@+id/flotBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/black"
             android:layout_marginBottom="1dp"
-            android:backgroundTint="@color/blue"
-            android:src="@drawable/bmi"
+            android:backgroundTint="#2D4263"
+            app:backgroundTint="@color/DarkThem"
+            android:src="@drawable/scales"
             app:layout_anchor="@+id/bottomNavBar"
             app:layout_anchorGravity="center" />
 
