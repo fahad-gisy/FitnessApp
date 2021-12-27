@@ -7,11 +7,31 @@
     android:background="@color/DarkThem"
     tools:context=".HealthyFoodFragment">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="وجبات دايت"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/foodCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/towZeroLine3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.40"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/towZeroLine"
@@ -26,37 +46,189 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.50"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="1.60"
+        />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/foodCard"
-        android:clickable="true"
-        android:backgroundTint="@color/DarkThem"
         android:layout_width="320dp"
         android:layout_height="165dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/DarkBlue"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/towZeroLine3"
+        app:layout_constraintEnd_toEndOf="@+id/line4"
         app:layout_constraintStart_toStartOf="@+id/towZeroLine"
         app:layout_constraintTop_toTopOf="parent">
-     <androidx.constraintlayout.widget.ConstraintLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent">
 
 
-         <com.airbnb.lottie.LottieAnimationView
-             android:id="@+id/dailyfood"
-             app:lottie_rawRes="@raw/dailyfood"
-             app:lottie_autoPlay="true"
-             app:lottie_loop="true"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent"
-             />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
-     </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/dailyfood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/femalefood" />
 
 
 
-   </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:backgroundTint="@color/DarkBlue"
+        android:layout_marginTop="100dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/towZeroLine2"
+        app:layout_constraintStart_toStartOf="@+id/towZeroLine"
+        app:layout_constraintTop_toBottomOf="@+id/foodCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/sunAnim"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/sun" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الفطور"
+                android:textSize="25dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sunAnim" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/DarkBlue"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/towZeroLine2"
+        app:layout_constraintEnd_toEndOf="@id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/foodCard">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/noonAnime"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/noon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="الغداء"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noonAnime" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="@color/DarkBlue"
+        app:layout_constraintBottom_toTopOf="@+id/line5"
+        app:layout_constraintEnd_toEndOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/moonAnime"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/moon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="العشاء"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moonAnime" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="@color/DarkBlue"
+        app:layout_constraintStart_toEndOf="@+id/towZeroLine"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
