@@ -6,18 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import android.widget.Toast
-import androidx.fragment.app.FragmentManager
+import android.widget.FrameLayout
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.concurrent.fixedRateTimer
 
-var fragmentAdded:Fragment? = null
+
+
 //نقلنا داله اللسنر هنا
 class WorkoutFragment : Fragment(),CustomWorkout.MyOnClickListener {
-
+    var frameLayout: FrameLayout? = null
 var listView:RecyclerView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +37,9 @@ var listView:RecyclerView? = null
     private fun connectVs(view: View) {
         bottomNavigationView = view.findViewById(R.id.bottomNavView)
         listView = view.findViewById(R.id.workoutLIST)
+        frameLayout = view.findViewById(R.id.container)
     }
+
 
     private fun floatMain(){
         var intent:Intent
@@ -83,7 +83,7 @@ listView?.adapter = customWorkout
 
                 fragmentTransaction.replace(R.id.container,ChairFragment(),"ChairFrag")
                 fragmentTransaction.addToBackStack("ChairFrag")
-//                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+//                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE)
                 fragmentTransaction.commit()
             }
             2->{
@@ -114,5 +114,10 @@ listView?.adapter = customWorkout
             }
         }
     }
+
+
+
+
+
 
 }

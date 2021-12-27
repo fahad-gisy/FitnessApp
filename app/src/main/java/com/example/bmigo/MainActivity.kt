@@ -1,20 +1,24 @@
 package com.example.bmigo
 
-import android.app.Activity
+
+
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.provider.DocumentsContract
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.io.FileInputStream
-var fragment:Fragment? = null
+
+
+var btnYes:Button? = null
+var btnNo:Button? = null
 var bottomNavigationView:BottomNavigationView? = null
 var floatingButtonBmi:FloatingActionButton? = null
 class MainActivity : AppCompatActivity() {
@@ -25,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     var result: TextView? = null
     var imageView: ImageView? = null
     var frameLayout: FrameLayout? = null
-    var lottieAnimationWeight:LottieAnimationView? = null
+    var lottieAnimationWeight: LottieAnimationView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         connectVs()
         clickBtn()
         navBottomClick()
-
 
 
     }
@@ -48,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottomNavView)
         frameLayout = findViewById(R.id.container)
         floatingButtonBmi = findViewById(R.id.flotBMI)
+
     }
 
     private fun clickBtn() {
@@ -59,8 +63,7 @@ class MainActivity : AppCompatActivity() {
                 val w: Float = editTextW?.text.toString().toFloat() // نحول الوزن من نص ل فلوت
                 val res: Float = w / (h * h)
 
-
-                val intent: Intent = Intent(this, Result::class.java)
+                var intent: Intent = Intent(this, Result::class.java)
                 intent.putExtra("R", res)
                 startActivity(intent)
             } catch (error: NumberFormatException) {
@@ -73,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun navBottomClick() {
+
         bottomNavigationView?.setOnItemSelectedListener {
 
             when (it.itemId) {
@@ -81,15 +85,18 @@ class MainActivity : AppCompatActivity() {
                     var fragmentTransaction: FragmentTransaction =
                         supportFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.container, WorkoutFragment(), "WORKOUT")
-//                    fragmentTransaction.addToBackStack("WORKOUT")
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE)
                     fragmentTransaction.commit()
+
 
                 }
                 R.id.health -> {
                     var fragmentTransaction: FragmentTransaction =
                         supportFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.container, HealthyFoodFragment(), "HealthFood")
-//                    fragmentTransaction.addToBackStack("HealthFood")
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_NONE)
                     fragmentTransaction.commit()
 
                 }
@@ -101,15 +108,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-//        super.onBackPressed()
 
+        if(supportFragmentManager.backStackEntryCount > 2){
+            val i = Intent(MainActivity@this,MainActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(i)
+        }else{
+            super.onBackPressed()
+        }
 
     }
 
+
 }
-
-
-
 
 
 

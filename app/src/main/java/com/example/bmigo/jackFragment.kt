@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import com.airbnb.lottie.LottieAnimationView
+import kotlin.concurrent.fixedRateTimer
 
 class jackFragment : Fragment() {
 
@@ -22,6 +24,11 @@ var lottieAnimationView:LottieAnimationView? = null
         super.onViewCreated(view, savedInstanceState)
       connectVs(view)
         workOutFun()
+
+
+
+
+
     }
 private fun connectVs(view: View){
     lottieAnimationView = view.findViewById(R.id.jackjump)

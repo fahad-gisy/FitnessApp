@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.fragment.app.FragmentTransaction
 import com.airbnb.lottie.LottieAnimationView
 
 class SplashActivity : AppCompatActivity() {
@@ -14,13 +15,12 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_load)
         lottieSplash = findViewById(R.id.splash)
         lottieSplash?.playAnimation()
+        var intent  = intent
         Handler(Looper.myLooper()!!).postDelayed({
-
-            var intent = Intent(this,MainActivity::class.java)
+           intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
-
-        },3000)
+        },4000)
 
 
 
