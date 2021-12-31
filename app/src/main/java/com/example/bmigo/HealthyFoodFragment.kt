@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 
 
 class HealthyFoodFragment : Fragment() {
-
+var foodcard:CardView? = null
+    var noonfood:CardView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,11 +26,24 @@ class HealthyFoodFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
+       connectVs(view)
+        cardEvents()
        floatMain()
 
 
     }
+
+    private fun connectVs(view: View){
+        foodcard = view.findViewById(R.id.cardView)
+        noonfood = view.findViewById(R.id.cardView2)
+    }
+     private fun cardEvents(){
+         foodcard?.setOnClickListener {
+             var i = Intent(requireContext(),FoodScrollingActivity::class.java)
+             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+             startActivity(i)
+         }
+     }
     private fun floatMain(){
         var intent: Intent
         floatingButtonBmi?.setOnClickListener {
