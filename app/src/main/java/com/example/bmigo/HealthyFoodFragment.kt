@@ -38,6 +38,13 @@ var foodcard:CardView? = null
         noonfood = view.findViewById(R.id.cardView2)
     }
      private fun cardEvents(){
+         noonfood?.setOnClickListener {
+
+             var i = Intent(requireContext(),NoonScrollingFoodActivity::class.java)
+             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+             startActivity(i)
+
+         }
          foodcard?.setOnClickListener {
              var i = Intent(requireContext(),FoodScrollingActivity::class.java)
              i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
