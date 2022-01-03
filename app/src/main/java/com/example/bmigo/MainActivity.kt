@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun connectVs() {
-        lottieAnimationWeight = findViewById(R.id.weightLottie)
         button = findViewById(R.id.btnCal)
         editTextH = findViewById(R.id.ETheight)
         editTextW = findViewById(R.id.EDweight)

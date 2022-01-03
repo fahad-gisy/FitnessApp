@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BmiGO">
         <activity
+            android:name=".Dinner_Scrolling_Activity"
+            android:exported="false" />
+        <activity
             android:name=".NoonScrollingFoodActivity"
             android:exported="false" />
         <activity

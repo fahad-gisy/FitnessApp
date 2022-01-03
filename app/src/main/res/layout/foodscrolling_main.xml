@@ -59,7 +59,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
+                    app:lottie_loop="false"
                     app:lottie_rawRes="@raw/toast" />
 
                 <TextView
@@ -111,14 +111,14 @@
 
 
                 <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/eggs"
+                    android:id="@+id/orange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
+                    app:lottie_loop="false"
                     app:lottie_rawRes="@raw/orange" />
 
                 <TextView
@@ -132,7 +132,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/eggs" />
+                    app:layout_constraintTop_toBottomOf="@+id/orange" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -177,7 +177,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
+                    app:lottie_loop="false"
                     app:lottie_rawRes="@raw/milk" />
 
                 <TextView

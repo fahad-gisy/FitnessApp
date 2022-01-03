@@ -11,8 +11,9 @@ import androidx.fragment.app.Fragment
 
 
 class HealthyFoodFragment : Fragment() {
-var foodcard:CardView? = null
-    var noonfood:CardView? = null
+var foodCard:CardView? = null
+    var noonFood:CardView? = null
+    var dinnerFood:CardView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,18 +35,26 @@ var foodcard:CardView? = null
     }
 
     private fun connectVs(view: View){
-        foodcard = view.findViewById(R.id.cardView)
-        noonfood = view.findViewById(R.id.cardView2)
+        foodCard = view.findViewById(R.id.cardView)
+        noonFood = view.findViewById(R.id.cardView2)
+        dinnerFood = view.findViewById(R.id.cardView3)
     }
      private fun cardEvents(){
-         noonfood?.setOnClickListener {
+
+         dinnerFood?.setOnClickListener {
+             var i = Intent(requireContext(),Dinner_Scrolling_Activity::class.java)
+             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+             startActivity(i)
+         }
+
+         noonFood?.setOnClickListener {
 
              var i = Intent(requireContext(),NoonScrollingFoodActivity::class.java)
              i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
              startActivity(i)
 
          }
-         foodcard?.setOnClickListener {
+         foodCard?.setOnClickListener {
              var i = Intent(requireContext(),FoodScrollingActivity::class.java)
              i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
              startActivity(i)
