@@ -13,7 +13,7 @@ class FoodScrollingActivity : AppCompatActivity() {
         setContentView(R.layout.foodscrolling_main)
 
         connectVs()
-        animationLottieMilk?.setMaxFrame(130)
+        animationLottieMilk?.setMaxFrame(170)
         animationLottieToast?.setMaxFrame(110)
         animationLottieOrange?.setMaxFrame(30)
 

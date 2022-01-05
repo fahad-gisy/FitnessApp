@@ -34,7 +34,7 @@ connectVs()
             imageView?.setImageResource(R.drawable.normalweight)
 
         } else if (resultGo > 24.9 && resultGo < 29.9){
-            result?.text = "%.2f".format(resultGo)+"\n وزن زايد "
+            result?.text = "%.2f".format(resultGo)+"\n وزن زائد "
             imageView?.setImageResource(R.drawable.overweight)
         }else if (resultGo >= 30.0){
             result?.text = "%.2f".format(resultGo)+"\n سمنة "
